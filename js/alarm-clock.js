@@ -1,24 +1,28 @@
+var alarm_time;
+
 function Clock() {
-  this.alarm_time = "";
 }
 
-Clock.prototype.alarm = function(alarm_time, displayFunction) {
-  console.log(alarm_time);
-  this.alarm_time = alarm_time;
-  checkAlarm(alarm_time, displayFunction);
+Clock.prototype.alarm = function(new_alarm_time, displayFunction) {
+  alarm_time = new_alarm_time;
+  checkAlarm(displayFunction);
 };
 
-function checkAlarm(alarm_time, displayFunction) {
+function checkAlarm(displayFunction) {
   var current_time = parseInt(moment().format("x"));
   var alarm_time_m = parseInt(moment(alarm_time, "HH:mm").format("x"));
   if (current_time >= alarm_time_m) {
     displayFunction();
   }
-  setTimeout(checkAlarm, 1000, alarm_time, displayFunction);
+  setTimeout(checkAlarm, 1000, displayFunction);
 }
 
-Clock.prototype.setAlarm = function(alarm_time) {
-  this.alarm_time = moment(alarm_time, "HH:mm");
+Clock.prototype.snooze = function(snoozeTime) {
+  alarm_time = moment().add(snoozeTime, "m");
+};
+
+Clock.prototype.getAlarmTime = function() {
+  return alarm_time.format("HH:mm");
 };
 
 exports.clockModule = Clock;

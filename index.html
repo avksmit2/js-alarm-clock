@@ -10,17 +10,18 @@
   </head>
   <body>
     <div class="container">
-      <div id="clock"></div>
+      <div class="jumbotron">
+        <div id="clock"></div>
+      </div>
       <form id="alarm">
         <label for="alarm_time">Enter Alarm Time</label>
         <input id="alarm_time" type="time">
         <button type="submit">Submit</button>
       </form>
-      <div class="set_alarm">
-
-      </div>
-      <div class="alarm_ringing">
-        <h3>ALARM!!!</h3>
+      <div id="snooze-group">
+        <label for="snooze-time">Minutes to Snooze:</label>
+        <input id="snooze-time" type="number" required>
+        <button id="snooze" class="btn btn-danger" type="button">Snooze</button>
       </div>
     </div>
   </body>
