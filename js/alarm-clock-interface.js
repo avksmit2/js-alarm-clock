@@ -1,13 +1,13 @@
 var Clock = require('./../js/alarm-clock.js').clockModule;
 
 var displayAlarm = function() {
-  $("body").css("background", "url(img/giphy.gif) no-repeat");
+  $(".footer").fadeIn();
   $("#snooze-group").show();
 };
 
 function updateClock() {
-  var time = moment().format('hh:mm:ss');
-  $('#clock').html("<h1 class='text-center'>" + time + "</h1>");
+  var time = moment().format('hh:mm:ss MMMM Do YYYY');
+  $('#clock').html("<h1 class='text-center'>Current Time:  " + time + "</h1>");
   setTimeout(updateClock, 1000);
 }
 
@@ -23,8 +23,9 @@ $(document).ready(function() {
 
   $('#snooze').click(function() {
     clock.snooze($('#snooze-time').val());
-    $("body").css("background", "none");
+    $("#snooze-group").css("background", "none");
     $("#snooze-group").hide();
+    $(".footer").fadeOut();
     $("#alarm_time").val(clock.getAlarmTime());
   });
 

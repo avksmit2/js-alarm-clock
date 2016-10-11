@@ -1,3 +1,17 @@
 #snooze-group {
   display:none;
 }
+
+#clock {
+  color: red;
+}
+
+#alarm, #snooze-group {
+  font-size: 3vh;
+  padding: 2%;
+}
+
+.footer {
+  display: none;
+  margin-top: 15%;
+}

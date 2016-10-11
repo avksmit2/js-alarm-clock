@@ -10,18 +10,21 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <div id="clock"></div>
+      <div id="clock"></div>
+      <div class="well">
+        <form id="alarm" class="text-center">
+          <label for="alarm_time">Enter Alarm Time</label>
+          <input id="alarm_time" type="time" >
+          <button type="submit" class="btn btn-info btn-lg">Submit</button>
+        </form>
+        <div id="snooze-group" class="text-center">
+          <label for="snooze-time">Minutes to Snooze:</label>
+          <input id="snooze-time" type="number" required>
+          <button id="snooze" class="btn btn-danger" type="button">Snooze</button>
+        </div>
       </div>
-      <form id="alarm">
-        <label for="alarm_time">Enter Alarm Time</label>
-        <input id="alarm_time" type="time">
-        <button type="submit">Submit</button>
-      </form>
-      <div id="snooze-group">
-        <label for="snooze-time">Minutes to Snooze:</label>
-        <input id="snooze-time" type="number" required>
-        <button id="snooze" class="btn btn-danger" type="button">Snooze</button>
+      <div class="footer text-center">
+        <img src="img/giphy.gif" alt="gif of stuie">
       </div>
     </div>
   </body>
